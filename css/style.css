@@ -96,6 +96,10 @@ main {
     grid-row-gap: 10px;
 }
 
+.card a {
+    text-decoration: none;
+}
+
 .card p {
     margin: 0;
 }
@@ -181,4 +185,13 @@ footer {
     width: 40px;
     height: 40px;
     fill: var(--dark);
+}
+
+.footer-icons svg:hover {
+    fill: var(--secondary);
+}
+
+/*** GENERAL ***/  
+a:hover {
+    text-decoration: underline;
 }
