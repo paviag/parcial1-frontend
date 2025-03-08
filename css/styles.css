@@ -1,0 +1,527 @@
+:root {
+    --primary: #FF6464;
+    --secondary: #00A8CC;
+    --accent: #142850;
+    --dark: #21243D; 
+    --light: #8695A4;
+    --highlight: #e0e0e0;
+}
+
+* {
+    font-family: "Heebo", serif;
+    color: var(--dark);
+}
+
+p {
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 1.9rem;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 900;
+}
+
+h3 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    color: #21243D;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%; /* Changed from 70% to 100% */
+}
+
+/* Header section */
+.header {
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px; /* Add max-width to keep content closer */
+    margin: 0 auto; /* Center the header content */
+}
+
+.header-content {
+    flex: 1;
+    max-width: 500px;
+    padding-right: 30px;
+}
+
+.header-title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.header-text {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #FF6464;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #ff4f4f;
+}
+
+/* Posts section */
+.posts-section {
+    background-color: #EDF7FA;
+    padding: 40px 0 60px;
+    width: 100%;
+}
+
+.posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.posts-title {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.view-all {
+    color: #00A8CC;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+.posts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.post-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    padding: 24px;
+    border-radius: 4px;
+}
+
+.post-title {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.post-meta {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.post-date {
+    margin-right: 20px;
+}
+
+.post-category {
+    color: #21243D;
+}
+
+.post-text {
+    color: #555;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 0;
+    }
+    
+    .header-content {
+        padding-right: 0;
+        margin-top: 40px;
+    }
+    
+    .posts-grid {
+        flex-direction: column;
+    }
+}
+
+/*** NAVBAR ***/
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+/* Links */
+.nav-links {
+    display: none;
+    margin: 0;
+}
+
+.nav-links li {
+    display: block;
+    padding: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links .selected {
+    color: var(--primary);
+}
+
+/* Modal button */
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+@media (min-width: 430px) {
+    .menu-btn {
+        display: none;
+    }
+    .nav-links {
+        display: flex;
+    }
+}
+
+/*** WORKS ***/
+.containerH {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: flex-start;
+    padding: 60px 0;
+}
+
+.containerH img {
+    width: 100%;
+}
+
+.card {
+    padding: 40px 0;
+    border-bottom: solid 2px var(--highlight);
+    display: grid;
+    grid-row-gap: 10px;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card p {
+    margin: 0;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.card h2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.card .meta {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.card .description {
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.meta {
+    display: flex;
+    align-items: baseline;
+    column-gap: 25px;
+    align-self: flex-start;
+}
+
+.meta p {
+    font-size: 1.1rem;
+}
+
+.meta .year {
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+    padding: 1px 10px;
+    border-radius: 1rem;
+}
+
+.meta .tag {
+    color: var(--light);
+}
+
+.meta.light .year {
+    background-color: var(--primary);
+}
+
+.meta.light .tag {
+    color: var(--dark);
+}
+
+@media (min-width: 827px) {
+    .card {
+        grid-template-columns: 1.5fr 2fr;
+        grid-template-rows: auto;
+        grid-column-gap: 20px;
+        grid-row-gap: 5px;
+    }
+    .card img { grid-area: 1 / 1 / 4 / 2 }
+    .card h2 { grid-area: 1 / 2 / 2 / 3 }
+    .card .meta { grid-area: 2 / 2 / 3 / 3 }
+    .card .description { grid-area: 3 / 2 / 4 / 3 }
+}
+
+@media (min-width: 980px) { 
+    .card {
+        grid-template-columns: 1.2fr 2fr;
+        grid-template-rows: 1fr 1fr 2fr;
+    }
+}
+
+/*** DETAIL ***/
+.work-detail h2 {
+    margin: 2em 0 0;
+}
+
+.work-detail h3 {
+    margin: 0.5em 0 0;
+}
+
+.work-detail img {
+    padding: 1.2rem 0 0;
+}
+
+.work-detail p {
+    margin: 0.5em 0 0;
+}
+
+/*** FOOTER ***/
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.footer-icons {
+    display: flex;
+    column-gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-icons li {
+    display: block;
+}
+
+.footer-icons svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--dark);
+}
+
+.footer-icons svg:hover {
+    fill: var(--secondary);
+}
+
+/*** GENERAL ***/  
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos de tipografía específicos */
+
+.blog-title {
+    font-size: 44px;
+    font-weight: 700; /* Heebo Bold */
+}
+
+.card-blog h2 {
+    font-size: 30px;
+    font-weight: 500; /* Heebo Medium */
+}
+
+.meta p {
+    font-size: 20px;
+    font-weight: 400; /* Heebo Regular */
+}
+
+.card-blog .description {
+    font-size: 16px;
+    font-weight: 400; /* Heebo Regular */
+}
+
+.card-blog {
+    padding: 40px 0;
+    border-bottom: solid 2px var(--highlight);
+    grid-row-gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .blog-page {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .blog-page .container {
+        width: 90%;
+        padding: 20px 0;
+    }
+
+    .blog-page .navbar {
+        padding: 5px 10px;
+    }
+
+    .blog-page .nav-links {
+        width: 100%;
+        right: 0;
+    }
+
+    .blog-page .card-blog {
+        padding: 20px 0;
+        border-bottom: solid 1px var(--highlight);
+    }
+
+    .blog-page footer {
+        padding: 20px 0;
+    }
+
+    .blog-page .footer-icons {
+        column-gap: 20px;
+    }
+
+    .blog-page .footer-icons svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .blog-page .blog-title {
+        font-size: 30px;
+        font-weight: 500; /* Heebo Medium */
+    }
+
+    .blog-page .card-blog .description {
+        font-size: 16px;
+        font-weight: 400; /* Heebo Regular */
+    }
+}
+
+/* Ocultar el menú en móviles y mostrar la hamburguesa */
+@media (max-width: 768px) {
+    .blog-page .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 150px;
+        padding: 10px 0;
+    }
+
+    /* Mostrar el menú cuando el checkbox está marcado */
+    .blog-page #menu-toggle:checked + .nav-links {
+        display: flex;
+    }
+
+    /* Ocultar la lista en móviles */
+    .blog-page .navbar ul {
+        display: none;
+    }
+
+    /* Botón hamburguesa */
+    .blog-page .menu-btn {
+        font-size: 30px;
+        cursor: pointer;
+        user-select: none;
+        display: block;
+    }
+
+    /* Ocultar la hamburguesa en pantallas grandes */
+    @media (min-width: 769px) {
+        .blog-page .menu-btn {
+            display: none;
+        }
+        .blog-page .nav-links {
+            display: flex;
+            position: static;
+            flex-direction: row;
+            box-shadow: none;
+            width: auto;
+        }
+    }
+}
+
+/* Ocultar el checkbox pero seguir usándolo */
+.blog-page #menu-toggle {
+    display: none;
+}
