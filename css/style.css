@@ -240,3 +240,133 @@ footer {
 a:hover {
     text-decoration: underline;
 }
+
+/* Estilos de tipografía específicos */
+
+.blog-title {
+    font-size: 44px;
+    font-weight: 700; /* Heebo Bold */
+}
+
+.card-blog h2 {
+    font-size: 30px;
+    font-weight: 500; /* Heebo Medium */
+}
+
+.meta p {
+    font-size: 20px;
+    font-weight: 400; /* Heebo Regular */
+}
+
+.card-blog .description {
+    font-size: 16px;
+    font-weight: 400; /* Heebo Regular */
+}
+
+.card-blog {
+    padding: 40px 0;
+    border-bottom: solid 2px var(--highlight);
+    grid-row-gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .blog-page {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .blog-page .container {
+        width: 90%;
+        padding: 20px 0;
+    }
+
+    .blog-page .navbar {
+        padding: 5px 10px;
+    }
+
+    .blog-page .nav-links {
+        width: 100%;
+        right: 0;
+    }
+
+    .blog-page .card-blog {
+        padding: 20px 0;
+        border-bottom: solid 1px var(--highlight);
+    }
+
+    .blog-page footer {
+        padding: 20px 0;
+    }
+
+    .blog-page .footer-icons {
+        column-gap: 20px;
+    }
+
+    .blog-page .footer-icons svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .blog-page .blog-title {
+        font-size: 30px;
+        font-weight: 500; /* Heebo Medium */
+    }
+
+    .blog-page .card-blog .description {
+        font-size: 16px;
+        font-weight: 400; /* Heebo Regular */
+    }
+}
+
+/* Ocultar el menú en móviles y mostrar la hamburguesa */
+@media (max-width: 768px) {
+    .blog-page .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 150px;
+        padding: 10px 0;
+    }
+
+    /* Mostrar el menú cuando el checkbox está marcado */
+    .blog-page #menu-toggle:checked + .nav-links {
+        display: flex;
+    }
+
+    /* Ocultar la lista en móviles */
+    .blog-page .navbar ul {
+        display: none;
+    }
+
+    /* Botón hamburguesa */
+    .blog-page .menu-btn {
+        font-size: 30px;
+        cursor: pointer;
+        user-select: none;
+        display: block;
+    }
+
+    /* Ocultar la hamburguesa en pantallas grandes */
+    @media (min-width: 769px) {
+        .blog-page .menu-btn {
+            display: none;
+        }
+        .blog-page .nav-links {
+            display: flex;
+            position: static;
+            flex-direction: row;
+            box-shadow: none;
+            width: auto;
+        }
+    }
+}
+
+/* Ocultar el checkbox pero seguir usándolo */
+.blog-page #menu-toggle {
+    display: none;
+}
