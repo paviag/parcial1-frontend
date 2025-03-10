@@ -10,6 +10,7 @@
 * {
     font-family: "Heebo", serif;
     color: var(--dark);
+    box-sizing: border-box;
 }
 
 p {
@@ -40,6 +41,150 @@ main {
 body {
     display: flex;
     flex-direction: column;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%; /* Changed from 70% to 100% */
+}
+
+/* Header section */
+.header {
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px; /* Add max-width to keep content closer */
+    margin: 0 auto; /* Center the header content */
+}
+
+.header-content {
+    flex: 1;
+    max-width: 500px;
+    padding-right: 30px;
+}
+
+.header-title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.header-text {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #FF6464;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #ff4f4f;
+}
+
+/* Posts section */
+.posts-section {
+    background-color: #EDF7FA;
+    padding: 40px 0 60px;
+    width: 100%;
+}
+
+.posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.home-titles {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.view-all {
+    color: #00A8CC;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+.posts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.post-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    padding: 24px;
+    border-radius: 4px;
+}
+
+.post-title {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.post-meta {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.post-date {
+    margin-right: 20px;
+}
+
+.post-category {
+    color: #21243D;
+}
+
+.post-text {
+    color: #555;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 0;
+    }
+    
+    .header-content {
+        padding-right: 0;
+        margin-top: 40px;
+    }
+    
+    .posts-grid {
+        flex-direction: column;
+    }
 }
 
 /*** NAVBAR ***/
@@ -93,7 +238,7 @@ body {
 }
 
 /*** WORKS ***/
-.container {
+.containerH {
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -102,7 +247,7 @@ body {
     padding: 60px 0;
 }
 
-.container img {
+.containerH img {
     width: 100%;
 }
 
@@ -237,6 +382,11 @@ footer {
 }
 
 /*** GENERAL ***/  
+
+.container a {
+    text-decoration: none;
+}
+
 a:hover {
     text-decoration: underline;
 }
@@ -280,31 +430,9 @@ a:hover {
         padding: 20px 0;
     }
 
-    .blog-page .navbar {
-        padding: 5px 10px;
-    }
-
-    .blog-page .nav-links {
-        width: 100%;
-        right: 0;
-    }
-
     .blog-page .card-blog {
         padding: 20px 0;
         border-bottom: solid 1px var(--highlight);
-    }
-
-    .blog-page footer {
-        padding: 20px 0;
-    }
-
-    .blog-page .footer-icons {
-        column-gap: 20px;
-    }
-
-    .blog-page .footer-icons svg {
-        width: 30px;
-        height: 30px;
     }
 
     .blog-page .blog-title {
@@ -316,57 +444,4 @@ a:hover {
         font-size: 16px;
         font-weight: 400; /* Heebo Regular */
     }
-}
-
-/* Ocultar el menú en móviles y mostrar la hamburguesa */
-@media (max-width: 768px) {
-    .blog-page .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        right: 10px;
-        background: white;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 150px;
-        padding: 10px 0;
-    }
-
-    /* Mostrar el menú cuando el checkbox está marcado */
-    .blog-page #menu-toggle:checked + .nav-links {
-        display: flex;
-    }
-
-    /* Ocultar la lista en móviles */
-    .blog-page .navbar ul {
-        display: none;
-    }
-
-    /* Botón hamburguesa */
-    .blog-page .menu-btn {
-        font-size: 30px;
-        cursor: pointer;
-        user-select: none;
-        display: block;
-    }
-
-    /* Ocultar la hamburguesa en pantallas grandes */
-    @media (min-width: 769px) {
-        .blog-page .menu-btn {
-            display: none;
-        }
-        .blog-page .nav-links {
-            display: flex;
-            position: static;
-            flex-direction: row;
-            box-shadow: none;
-            width: auto;
-        }
-    }
-}
-
-/* Ocultar el checkbox pero seguir usándolo */
-.blog-page #menu-toggle {
-    display: none;
 }

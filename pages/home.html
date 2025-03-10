@@ -9,20 +9,29 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
-        <link href="../css/styles.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
     </head>
 
     <body>
-        <nav class="navbar">
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-btn">&#9776;</label>
-        
-            <ul class="nav-links">
-                <li><a href="#" class="selected">Blog</a></li>
-                <li><a href="#">Works</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <header>
+            <nav class="navbar" aria-label="Main navigation" role="navigation">
+                <ul class="nav-links">
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <button class="menu-btn" aria-label="Toggle navigation menu">
+                    <?xml version="1.0" ?>
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <g data-name="1" id="_1" fill="#000">
+                            <path d="M441.13,166.52h-372a15,15,0,1,1,0-30h272a15,15,0,0,1,0,30Z"/>
+                            <path d="M441.13,279.72h-372a15,15,0,1,1,0-30h272a15,15,0,0,1,0,30Z"/>
+                            <path d="M441.13,392.92h-372a15,15,0,1,1,0-30h272a15,15,0,0,1,0,30Z"/>
+                        </g>
+                    </svg>
+                </button>
+            </nav>
+        </header>
         <!-- Header Section -->
         <div class="containerH">
             <header class="header">
@@ -58,7 +67,9 @@
                 
                 <div class="posts-grid">
                     <article class="post-card">
-                        <h3 class="post-title">Making a design system from scratch</h3>
+                        <a href="#">
+                            <h3 class="post-title">Making a design system from scratch</h3>
+                        </a>
                         <div class="post-meta">
                             <span class="post-date">12 Feb 2020</span>
                             <span class="post-category">Design, Pattern</span>
@@ -67,7 +78,9 @@
                     </article>
                     
                     <article class="post-card">
-                        <h3 class="post-title">Creating pixel perfect icons in Figma</h3>
+                        <a href="#">
+                            <h3 class="post-title">Creating pixel perfect icons in Figma</h3>
+                        </a>
                         <div class="post-meta">
                             <span class="post-date">12 Feb 2020</span>
                             <span class="post-category">Figma, Icon Design</span>
@@ -77,8 +90,8 @@
                 </div>
             </div>
         </section>
-        <section class="container">
-            <h1>Work</h1>
+        <section class="container works-section">
+            <h1 class="home-titles">Featured works</h1>
             <article class="card">
                 <img src="../images/dashboard.png" alt="Close up of a dashboard with an urban color scheme.">
                 <a href="#"><h2>Designing Dashboards</h2></a>
